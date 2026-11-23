@@ -1,0 +1,619 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Farm2Prep | Fresh Cut Vegetables</title>
+<meta name="description" content="Fresh, clean and ready-to-cook vegetables delivered in Bhilai. Daily and bulk orders for homes, PGs, mess and catering.">
+
+<style>
+:root {
+  --green: #174d35;
+  --light-green: #eaf3e9;
+  --cream: #faf8f0;
+  --orange: #e99b45;
+  --dark: #243329;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: Arial, sans-serif;
+  background: var(--cream);
+  color: var(--dark);
+  line-height: 1.6;
+}
+
+header {
+  background: white;
+  padding: 15px 6%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  position: sticky;
+  top: 0;
+  z-index: 10;
+  box-shadow: 0 2px 12px #00000010;
+}
+
+.logo {
+  color: var(--green);
+  font-size: 25px;
+  font-weight: bold;
+}
+
+.logo span {
+  color: var(--orange);
+}
+
+nav a {
+  text-decoration: none;
+  color: var(--dark);
+  margin-left: 17px;
+  font-size: 14px;
+}
+
+.cart-button, .primary-btn {
+  background: var(--green);
+  color: white;
+  border: none;
+  padding: 12px 19px;
+  border-radius: 8px;
+  cursor: pointer;
+  font-weight: bold;
+}
+
+.hero {
+  padding: 75px 7%;
+  background: var(--light-green);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 30px;
+}
+
+.hero-content {
+  max-width: 550px;
+}
+
+.tag {
+  color: var(--green);
+  font-weight: bold;
+  font-size: 13px;
+  letter-spacing: 2px;
+}
+
+.hero h1 {
+  font-size: clamp(35px, 6vw, 58px);
+  line-height: 1.15;
+  margin: 17px 0;
+  color: var(--green);
+}
+
+.hero p {
+  margin-bottom: 24px;
+  color: #526458;
+}
+
+.hero-image {
+  font-size: 130px;
+  background: white;
+  border-radius: 50%;
+  width: 230px;
+  height: 230px;
+  display: grid;
+  place-items: center;
+}
+
+section {
+  padding: 55px 7%;
+}
+
+.section-heading {
+  text-align: center;
+  margin-bottom: 32px;
+}
+
+.section-heading h2 {
+  color: var(--green);
+  font-size: 30px;
+}
+
+.section-heading p {
+  color: #738074;
+}
+
+.products {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+}
+
+.product {
+  background: white;
+  border-radius: 14px;
+  padding: 20px;
+  text-align: center;
+  box-shadow: 0 3px 15px #00000008;
+}
+
+.product-image {
+  font-size: 65px;
+  background: var(--light-green);
+  padding: 20px;
+  border-radius: 12px;
+  margin-bottom: 15px;
+}
+
+.product h3 {
+  color: var(--green);
+  margin-bottom: 5px;
+}
+
+.product p {
+  font-size: 13px;
+  color: #788178;
+  margin-bottom: 12px;
+}
+
+.product button {
+  background: var(--green);
+  color: white;
+  border: none;
+  padding: 10px 18px;
+  border-radius: 7px;
+  cursor: pointer;
+  margin-top: 10px;
+}
+
+.why {
+  background: var(--light-green);
+}
+
+.features {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+  text-align: center;
+}
+
+.feature {
+  background: white;
+  padding: 25px 15px;
+  border-radius: 12px;
+}
+
+.feature .emoji {
+  font-size: 35px;
+}
+
+.feature h3 {
+  color: var(--green);
+  margin: 8px 0;
+}
+
+.audience {
+  text-align: center;
+}
+
+.audience-list {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 12px;
+  margin-top: 22px;
+}
+
+.audience-list span {
+  background: var(--light-green);
+  padding: 12px 18px;
+  border-radius: 25px;
+}
+
+.order-section {
+  background: white;
+}
+
+.cart-box {
+  max-width: 650px;
+  margin: auto;
+  background: var(--cream);
+  border-radius: 14px;
+  padding: 25px;
+}
+
+.cart-item {
+  display: flex;
+  justify-content: space-between;
+  gap: 12px;
+  padding: 12px 0;
+  border-bottom: 1px solid #ddd;
+}
+
+.cart-item button {
+  padding: 3px 9px;
+  margin-left: 5px;
+  cursor: pointer;
+}
+
+form {
+  margin-top: 20px;
+}
+
+form input, form textarea {
+  width: 100%;
+  padding: 13px;
+  margin: 7px 0 14px;
+  border: 1px solid #d7ded6;
+  border-radius: 8px;
+  font: inherit;
+}
+
+form label {
+  font-weight: bold;
+  font-size: 14px;
+}
+
+.whatsapp-btn {
+  width: 100%;
+  padding: 15px;
+  border: none;
+  border-radius: 8px;
+  background: #218c52;
+  color: white;
+  font-weight: bold;
+  font-size: 16px;
+  cursor: pointer;
+}
+
+footer {
+  background: var(--green);
+  color: white;
+  text-align: center;
+  padding: 30px 15px;
+}
+
+footer p {
+  margin: 6px;
+  font-size: 14px;
+}
+
+@media(max-width: 700px) {
+  header {
+    padding: 13px 4%;
+  }
+
+  nav a {
+    margin-left: 8px;
+    font-size: 12px;
+  }
+
+  .logo {
+    font-size: 20px;
+  }
+
+  .hero {
+    padding: 45px 6%;
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .hero-image {
+    width: 170px;
+    height: 170px;
+    font-size: 90px;
+  }
+
+  .products {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 12px;
+  }
+
+  .product {
+    padding: 12px;
+  }
+
+  .product-image {
+    font-size: 48px;
+  }
+
+  .features {
+    grid-template-columns: 1fr;
+  }
+
+  section {
+    padding: 40px 5%;
+  }
+}
+</style>
+</head>
+
+<body>
+
+<header>
+  <div class="logo">Farm2<span>Prep</span> 🌱</div>
+  <nav>
+    <a href="#home">Home</a>
+    <a href="#products">Products</a>
+    <a href="#contact">Contact</a>
+  </nav>
+  <button class="cart-button" onclick="showCart()">
+    Cart (<span id="cart-count">0</span>)
+  </button>
+</header>
+
+<main>
+
+<section class="hero" id="home">
+  <div class="hero-content">
+    <div class="tag">FRESH • CLEAN • READY TO COOK</div>
+    <h1>Fresh Vegetables.<br>Less Preparation.</h1>
+    <p>
+      Save your preparation time with fresh,
+      cleaned and neatly cut vegetables.
+      Convenient vegetable solutions for everyday cooking.
+    </p>
+    <a href="#products">
+      <button class="primary-btn">Explore Products →</button>
+    </a>
+  </div>
+  <div class="hero-image">🥬🥕</div>
+</section>
+
+<section id="products">
+  <div class="section-heading">
+    <h2>Our Fresh Collection</h2>
+    <p>Choose your vegetables and add them to your cart.</p>
+  </div>
+
+  <div class="products" id="product-list"></div>
+</section>
+
+<section class="why">
+  <div class="section-heading">
+    <h2>Why Farm2Prep?</h2>
+    <p>More convenience, less kitchen preparation.</p>
+  </div>
+
+  <div class="features">
+    <div class="feature">
+      <div class="emoji">🥦</div>
+      <h3>Fresh Selection</h3>
+      <p>Vegetables selected for everyday cooking.</p>
+    </div>
+
+    <div class="feature">
+      <div class="emoji">🧼</div>
+      <h3>Clean Preparation</h3>
+      <p>Prepared with attention to cleanliness and hygiene.</p>
+    </div>
+
+    <div class="feature">
+      <div class="emoji">⏰</div>
+      <h3>Save Your Time</h3>
+      <p>Less chopping and more time for your day.</p>
+    </div>
+  </div>
+</section>
+
+<section class="audience">
+  <div class="section-heading">
+    <h2>Who We Serve</h2>
+    <p>Convenient vegetable preparation for everyone.</p>
+  </div>
+
+  <div class="audience-list">
+    <span>🏠 Homes</span>
+    <span>👩‍💼 Working Professionals</span>
+    <span>🎓 PG Students</span>
+    <span>🍱 Tiffin Services</span>
+    <span>🍽️ Mess & Hostels</span>
+    <span>🎉 Catering Services</span>
+  </div>
+</section>
+
+<section class="order-section" id="cart-section">
+  <div class="section-heading">
+    <h2>Your Shopping Cart</h2>
+    <p>Review your selection before sending an order.</p>
+  </div>
+
+  <div class="cart-box">
+    <div id="cart-items">
+      <p>Your cart is currently empty.</p>
+    </div>
+
+    <form id="order-form">
+      <h3>Customer Details</h3>
+
+      <label for="customer-name">Your Name</label>
+      <input id="customer-name" type="text"
+        placeholder="Enter your name" required>
+
+      <label for="customer-phone">Phone Number</label>
+      <input id="customer-phone" type="tel"
+        inputmode="numeric" pattern="[0-9]{10}"
+        maxlength="10" placeholder="10-digit mobile number" required>
+
+      <label for="customer-address">Delivery Address</label>
+      <textarea id="customer-address"
+        placeholder="Enter your delivery address"
+        rows="3" required></textarea>
+
+      <label for="customer-notes">Special Instructions (Optional)</label>
+      <textarea id="customer-notes"
+        placeholder="Example: Small cubes, thin slices..."
+        rows="2"></textarea>
+
+      <button class="whatsapp-btn" type="submit">
+        Send Order on WhatsApp
+      </button>
+    </form>
+  </div>
+</section>
+
+<section id="contact">
+  <div class="section-heading">
+    <h2>Farm2Prep</h2>
+    <p>Fresh-cut vegetable convenience in Bhilai, Chhattisgarh.</p>
+    <p>For daily orders and bulk enquiries, contact us.</p>
+  </div>
+</section>
+
+</main>
+
+<footer>
+  <h2>Farm2Prep 🌱</h2>
+  <p>Fresh • Clean • Ready to Cook</p>
+  <p>Bhilai, Chhattisgarh</p>
+  <p>© 2026 Farm2Prep. All rights reserved.</p>
+</footer>
+
+<script>
+const products = [
+  {id:1, name:"Onion", emoji:"🧅", desc:"Peeled and chopped"},
+  {id:2, name:"Potato", emoji:"🥔", desc:"Peeled and diced"},
+  {id:3, name:"Tomato", emoji:"🍅", desc:"Freshly chopped"},
+  {id:4, name:"Carrot", emoji:"🥕", desc:"Peeled and sliced"},
+  {id:5, name:"Capsicum", emoji:"🫑", desc:"Cleaned and chopped"},
+  {id:6, name:"Mixed Vegetables", emoji:"🥦", desc:"Seasonal vegetable mix"}
+];
+
+let cart = [];
+
+function renderProducts() {
+  const list = document.getElementById("product-list");
+
+  list.innerHTML = products.map(p => `
+    <div class="product">
+      <div class="product-image">${p.emoji}</div>
+      <h3>${p.name}</h3>
+      <p>${p.desc}</p>
+      <p>Price: Confirm on WhatsApp</p>
+      <button onclick="addToCart(${p.id})">
+        Add to Cart +
+      </button>
+    </div>
+  `).join("");
+}
+
+function addToCart(id) {
+  const item = cart.find(p => p.id === id);
+
+  if(item) {
+    item.qty++;
+  } else {
+    cart.push({...products.find(p => p.id === id), qty:1});
+  }
+
+  updateCart();
+  alert("Product added to your cart!");
+}
+
+function updateCart() {
+  const count = cart.reduce((sum,p) => sum + p.qty, 0);
+
+  document.getElementById("cart-count").textContent = count;
+
+  const container = document.getElementById("cart-items");
+
+  if(cart.length === 0) {
+    container.innerHTML = "<p>Your cart is currently empty.</p>";
+    return;
+  }
+
+  container.innerHTML = cart.map(p => `
+    <div class="cart-item">
+      <div>
+        ${p.emoji} <strong>${p.name}</strong><br>
+        Quantity: ${p.qty}
+      </div>
+      <div>
+        <button onclick="changeQty(${p.id},-1)">−</button>
+        <button onclick="changeQty(${p.id},1)">+</button>
+      </div>
+    </div>
+  `).join("");
+}
+
+function changeQty(id, amount) {
+  const item = cart.find(p => p.id === id);
+
+  if(!item) return;
+
+  item.qty += amount;
+
+  if(item.qty <= 0) {
+    cart = cart.filter(p => p.id !== id);
+  }
+
+  updateCart();
+}
+
+function showCart() {
+  document.getElementById("cart-section")
+    .scrollIntoView({behavior:"smooth"});
+}
+
+document.getElementById("order-form")
+.addEventListener("submit", function(e) {
+  e.preventDefault();
+
+  if(cart.length === 0) {
+    alert("Please add products to your cart first.");
+    return;
+  }
+
+  const name = document.getElementById("customer-name").value.trim();
+  const phone = document.getElementById("customer-phone").value.trim();
+  const address = document.getElementById("customer-address").value.trim();
+  const notes = document.getElementById("customer-notes").value.trim();
+
+  if(!/^[0-9]{10}$/.test(phone)) {
+    alert("Please enter a valid 10-digit phone number.");
+    return;
+  }
+
+  const order = cart.map(p =>
+    `${p.name} - Quantity: ${p.qty}`
+  ).join("\n");
+
+  const message =
+`Hello Farm2Prep! I want to place an order.
+
+Customer: ${name}
+Phone: ${phone}
+
+My Order:
+${order}
+
+Delivery Address: ${address}
+Special Instructions: ${notes || "None"}
+
+Please confirm product prices, availability and delivery charges.`;
+
+  // Replace this with your dedicated Farm2Prep WhatsApp number.
+  const businessNumber = "919XXXXXXXXX";
+
+  if(!/^91[0-9]{10}$/.test(businessNumber)) {
+    alert("WhatsApp setup is pending. The business owner needs to add the Farm2Prep WhatsApp number.");
+    return;
+  }
+
+  const url = "https://wa.me/" + businessNumber +
+    "?text=" + encodeURIComponent(message);
+
+  window.open(url, "_blank");
+});
+
+renderProducts();
+updateCart();
+</script>
+
+</body>
+</html>
